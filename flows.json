@@ -45,133 +45,6 @@
         "highLimit": "10"
     },
     {
-        "id": "abdd52ffcad1b0e6",
-        "type": "debug",
-        "z": "b116184ffaa75eec",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 1390,
-        "y": 1040,
-        "wires": []
-    },
-    {
-        "id": "f483a6d9c5a59b18",
-        "type": "debug",
-        "z": "b116184ffaa75eec",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 1390,
-        "y": 1120,
-        "wires": []
-    },
-    {
-        "id": "1be15b14072b4df8",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Activate a relay",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set_one\": {\"index\": 0, \"value\": true}} ",
-        "payloadType": "json",
-        "x": 600,
-        "y": 960,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "cda931bfb6c36b82",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Deactivate all relays",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set_all\": false}",
-        "payloadType": "json",
-        "x": 590,
-        "y": 1500,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "cfbe34cd5fbd6cc3",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Get an relay status",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_get_one\": 0}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 1140,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "691626a8b50c39e9",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Get all analog values",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"ai_get_all\": \"status\"}",
-        "payloadType": "json",
-        "x": 580,
-        "y": 860,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "038f67adca3c7dbf",
-        "type": "7AI+2PR",
-        "z": "b116184ffaa75eec",
-        "name": "",
-        "modNumEnabled": false,
-        "modNum": "",
-        "modConfig": "c4fa6cbb.3eb1e",
-        "x": 1100,
-        "y": 1080,
-        "wires": [
-            [
-                "abdd52ffcad1b0e6"
-            ],
-            [
-                "f483a6d9c5a59b18"
-            ]
-        ]
-    },
-    {
         "id": "f32735bae6710c0e",
         "type": "comment",
         "z": "b116184ffaa75eec",
@@ -182,133 +55,48 @@
         "wires": []
     },
     {
-        "id": "bc55dd18e219ebda",
-        "type": "comment",
+        "id": "1c8772b699662280",
+        "type": "inject",
         "z": "b116184ffaa75eec",
-        "name": "Relay functions",
-        "info": "",
-        "x": 360,
-        "y": 940,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1000,
+        "wires": [
+            [
+                "21b5f2f431d8c229"
+            ]
+        ]
+    },
+    {
+        "id": "21b5f2f431d8c229",
+        "type": "debug",
+        "z": "b116184ffaa75eec",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 1060,
         "wires": []
-    },
-    {
-        "id": "fc7f45a5197bcce1",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Activate some relays",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set\":[true,true]}",
-        "payloadType": "json",
-        "x": 590,
-        "y": 1020,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "46d177cf1a3ded99",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Activate all relays",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set_all\": true}",
-        "payloadType": "json",
-        "x": 600,
-        "y": 1080,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "5cf0ce1b248b80d2",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Deactivate a relay",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set_one\": {\"index\": 0, \"value\": false}} ",
-        "payloadType": "json",
-        "x": 590,
-        "y": 1260,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "b375496c95ed4818",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Deactivate some relays",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_set\": [false, null]} ",
-        "payloadType": "json",
-        "x": 580,
-        "y": 1320,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "9a7f3d50fa1e04a4",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Get an analog value",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"ai_get_one\": 0} ",
-        "payloadType": "json",
-        "x": 590,
-        "y": 797,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
-    },
-    {
-        "id": "4c068a1c3f370bf2",
-        "type": "inject",
-        "z": "b116184ffaa75eec",
-        "name": "Get all relays status",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"relay_get_all\": \"status\"}",
-        "payloadType": "json",
-        "x": 410,
-        "y": 1200,
-        "wires": [
-            [
-                "038f67adca3c7dbf"
-            ]
-        ]
     }
 ]
